@@ -11,36 +11,18 @@ const app  = express();
 const PORT = process.env.PORT || 3000;
 const SECRET = process.env.JWT_SECRET || 'changeme';
 
-// On Render: use persistent disk at RENDER_DATA_PATH; locally: use project root
-const DATA_ROOT  = process.env.RENDER_DATA_PATH || __dirname;
-const DB         = path.join(DATA_ROOT, 'data', 'portfolio.json');
-const UPLOAD_DIR = path.join(DATA_ROOT, 'uploads');
+// Files live in the project directory (works on Render free tier and locally)
+const DB         = path.join(__dirname, 'data', 'portfolio.json');
+const UPLOAD_DIR = path.join(__dirname, 'uploads');
 
-// Ensure directories exist on persistent disk
-['data', 'uploads/photos', 'uploads/videos'].forEach(d => {
-  fs.mkdirSync(path.join(DATA_ROOT, d), { recursive: true });
+// Ensure upload directories exist
+['uploads/photos', 'uploads/videos'].forEach(d => {
+  fs.mkdirSync(path.join(__dirname, d), { recursive: true });
 });
-
-// Seed portfolio.json on persistent disk if it doesn't exist
-if (!fs.existsSync(DB)) {
-  const seed = path.join(__dirname, 'data', 'portfolio.json');
-  if (fs.existsSync(seed)) fs.copyFileSync(seed, DB);
-  else fs.writeFileSync(DB, '{"items":[]}');
-}
-
-// Seed uploaded photos to persistent disk if missing
-const seedPhotos = path.join(__dirname, 'uploads', 'photos');
-const diskPhotos = path.join(UPLOAD_DIR, 'photos');
-if (fs.existsSync(seedPhotos)) {
-  fs.readdirSync(seedPhotos).forEach(f => {
-    const dest = path.join(diskPhotos, f);
-    if (!fs.existsSync(dest)) fs.copyFileSync(path.join(seedPhotos, f), dest);
-  });
-}
 
 app.use(express.json());
 app.use(express.static(__dirname));
-app.use('/uploads', express.static(diskPhotos.replace('/photos', '')));
+app.use('/uploads', express.static(UPLOAD_DIR));
 
 /* ── helpers ── */
 const readDB  = () => JSON.parse(fs.readFileSync(DB, 'utf8'));
@@ -140,7 +122,7 @@ app.delete('/api/portfolio/:id', auth, (req, res) => {
   if (!item) return res.status(404).json({ error: 'Not found' });
   // Remove file from disk
   if (item.src) {
-    const filePath = path.join(DATA_ROOT, item.src);
+    const filePath = path.join(__dirname, item.src);
     if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
   }
   db.items = db.items.filter(i => i.id !== req.params.id);
