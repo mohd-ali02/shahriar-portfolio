@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Al Shahriar — Photographer & Cinematographer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="src/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">SHAHRIAR</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-slides" id="heroSlides"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tag reveal-up">Bangladesh · Available for Work</p>
+      <h1 class="hero-title reveal-up">Al Shahriar</h1>
+      <p class="hero-sub reveal-up">Photographer &amp; Cinematographer</p>
+      <a href="#portfolio" class="btn-gold reveal-up">View Portfolio</a>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-bar"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-wrap">
+      <div class="about-img-wrap reveal-left">
+        <img src="edited/DSC09953.JPG" alt="Al Shahriar — Photographer" />
+      </div>
+      <div class="about-body">
+        <span class="label reveal-up">About Me</span>
+        <h2 class="reveal-up">Crafting Visual<br /><em>Stories</em></h2>
+        <p class="reveal-up">Based in Bangladesh, I am a full-time photographer and cinematographer with a meticulous eye for detail and a passion for visual storytelling. I specialise in product, beauty, and commercial photography — transforming everyday objects into compelling imagery.</p>
+        <p class="reveal-up">From set design to final frame, every element is intentional. My work serves brands that demand excellence.</p>
+        <div class="about-stats reveal-up">
+          <div class="stat"><span class="n">33+</span><span class="l">Projects</span></div>
+          <div class="stat"><span class="n">673+</span><span class="l">Views</span></div>
+          <div class="stat"><span class="n">100%</span><span class="l">Dedication</span></div>
+        </div>
+        <div class="about-ctas reveal-up">
+          <a href="https://www.behance.net/shahriarzone" target="_blank" class="btn-outline">Behance ↗</a>
+          <a href="https://web.facebook.com/shahriarzone" target="_blank" class="btn-outline">Facebook ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="section-head">
+      <span class="label reveal-up">Selected Work</span>
+      <h2 class="reveal-up">Portfolio</h2>
+    </div>
+    <div class="filter-bar reveal-up">
+      <button class="filt active" data-filter="all">All</button>
+      <button class="filt" data-filter="product">Product</button>
+      <button class="filt" data-filter="beauty">Beauty</button>
+      <button class="filt" data-filter="commercial">Commercial</button>
+      <button class="filt" data-filter="setdesign">Set Design</button>
+    </div>
+    <div class="gallery" id="gallery"></div>
+    <div class="gallery-end reveal-up">
+      <a href="https://www.behance.net/shahriarzone" target="_blank" class="btn-outline">See Full Portfolio on Behance ↗</a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-head">
+      <span class="label reveal-up">What I Offer</span>
+      <h2 class="reveal-up">Services</h2>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card reveal-up">
+        <div class="svc-num">01</div>
+        <h3>Product Photography</h3>
+        <p>High-end product shoots with expert lighting and composition. Built for e-commerce, print, and brand campaigns.</p>
+      </div>
+      <div class="svc-card reveal-up">
+        <div class="svc-num">02</div>
+        <h3>Beauty &amp; Cosmetics</h3>
+        <p>Stunning imagery for skincare, cosmetics, and personal care brands. Colour-accurate, editorial, and shelf-ready.</p>
+      </div>
+      <div class="svc-card reveal-up">
+        <div class="svc-num">03</div>
+        <h3>Cinematography</h3>
+        <p>Cinematic video production for brand films, commercials, and creative projects. From concept to final cut.</p>
+      </div>
+      <div class="svc-card reveal-up">
+        <div class="svc-num">04</div>
+        <h3>Set Design &amp; Styling</h3>
+        <p>End-to-end creative set design and prop styling that brings your brand narrative to life before the shutter clicks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <span class="label reveal-up">Get In Touch</span>
+        <h2 class="reveal-up">Let's Work<br /><em>Together</em></h2>
+        <p class="reveal-up">Available for full-time and freelance projects. Based in Bangladesh — open to remote collaborations worldwide.</p>
+        <div class="contact-links reveal-up">
+          <a href="https://www.behance.net/shahriarzone" target="_blank">Behance ↗</a>
+          <a href="https://web.facebook.com/shahriarzone" target="_blank">Facebook ↗</a>
+        </div>
+      </div>
+      <form class="contact-form reveal-up" id="contactForm">
+        <div class="field"><input type="text" placeholder="Your Name" required /></div>
+        <div class="field"><input type="email" placeholder="Your Email" required /></div>
+        <div class="field"><input type="text" placeholder="Subject" /></div>
+        <div class="field"><textarea rows="5" placeholder="Your Message" required></textarea></div>
+        <button type="submit" class="btn-gold">Send Message</button>
+        <p class="form-msg" id="formMsg"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="nav-logo">SHAHRIAR</span>
+      <p>© 2025 Al Shahriar. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://www.behance.net/shahriarzone" target="_blank">Behance</a>
+        <a href="https://web.facebook.com/shahriarzone" target="_blank">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
+    <div class="lb-overlay"></div>
+    <button class="lb-close" aria-label="Close">×</button>
+    <button class="lb-prev" aria-label="Previous">&#8249;</button>
+    <button class="lb-next" aria-label="Next">&#8250;</button>
+    <div class="lb-stage">
+      <img id="lbImg" src="" alt="" />
+      <div class="lb-meta">
+        <p id="lbTitle"></p>
+        <p id="lbCat"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="src/script.js"></script>
+</body>
+</html>

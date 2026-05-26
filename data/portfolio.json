@@ -1,0 +1,54 @@
+{
+  "items": [
+    {
+      "id": "seed-001",
+      "type": "photo",
+      "title": "Green Perfume",
+      "category": "beauty",
+      "description": "Elegant perfume product photography with moody studio lighting.",
+      "featured": true,
+      "src": "/uploads/photos/green_perfume.png",
+      "date": "2025-08-01T00:00:00.000Z"
+    },
+    {
+      "id": "seed-002",
+      "type": "photo",
+      "title": "Rice Toner",
+      "category": "beauty",
+      "description": "Skincare product photography — clean, minimal, editorial.",
+      "featured": true,
+      "src": "/uploads/photos/rice_toner.png",
+      "date": "2025-08-15T00:00:00.000Z"
+    },
+    {
+      "id": "seed-003",
+      "type": "photo",
+      "title": "Olive Oil",
+      "category": "product",
+      "description": "Premium olive oil bottle shot with set design and warm lighting.",
+      "featured": true,
+      "src": "/uploads/photos/olive_oil.png",
+      "date": "2025-09-01T00:00:00.000Z"
+    },
+    {
+      "id": "seed-004",
+      "type": "photo",
+      "title": "Cosrx Skincare",
+      "category": "beauty",
+      "description": "Korean skincare brand product photography.",
+      "featured": true,
+      "src": "/uploads/photos/cosrx.png",
+      "date": "2025-09-05T00:00:00.000Z"
+    },
+    {
+      "id": "seed-005",
+      "type": "photo",
+      "title": "Milani Lipstick",
+      "category": "beauty",
+      "description": "Milani lipstick swatch — bold colour, precise composition.",
+      "featured": true,
+      "src": "/uploads/photos/milani_lipstick.png",
+      "date": "2025-09-09T00:00:00.000Z"
+    }
+  ]
+}

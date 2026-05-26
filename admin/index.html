@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Shahriar Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../src/admin.css" />
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <div id="loginScreen" class="login-screen">
+    <div class="login-box">
+      <p class="login-brand">SHAHRIAR</p>
+      <h1>Admin Login</h1>
+      <form id="loginForm">
+        <input type="email" id="loginEmail" placeholder="Email" required />
+        <input type="password" id="loginPass" placeholder="Password" required />
+        <button type="submit">Sign In</button>
+        <p class="login-err" id="loginErr"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="dashboard" class="hidden">
+    <aside class="sidebar">
+      <p class="sidebar-brand">SHAHRIAR</p>
+      <nav>
+        <button class="tab-btn active" data-tab="photos">Photos &amp; Videos</button>
+        <button class="tab-btn" data-tab="writeups">Write-ups</button>
+        <button class="tab-btn" data-tab="manage">Manage</button>
+      </nav>
+      <button id="logoutBtn" class="logout-btn">Log Out</button>
+    </aside>
+
+    <main class="content">
+
+      <!-- TAB: PHOTOS & VIDEOS -->
+      <div id="tab-photos" class="tab-panel active">
+        <h2>Upload Photo or Video</h2>
+        <form id="mediaForm" enctype="multipart/form-data">
+          <div id="dropZone" class="drop-zone">
+            <input type="file" id="mediaFile" name="file" accept="image/*,video/*" hidden />
+            <div class="drop-inner" id="dropInner">
+              <p class="drop-icon">&#8593;</p>
+              <p>Drag &amp; drop or <span class="link" id="browseBtn">browse</span></p>
+              <p class="drop-hint">JPG, PNG, WebP, MP4, MOV · Max 200 MB</p>
+            </div>
+            <div id="previewWrap" class="preview-wrap hidden"></div>
+          </div>
+          <div class="fields">
+            <input type="text" name="title" placeholder="Title *" required />
+            <select name="category">
+              <option value="product">Product Photography</option>
+              <option value="beauty">Beauty &amp; Cosmetics</option>
+              <option value="commercial">Commercial</option>
+              <option value="setdesign">Set Design</option>
+              <option value="cinematography">Cinematography</option>
+            </select>
+            <textarea name="description" rows="3" placeholder="Description (optional)"></textarea>
+            <label class="check-label">
+              <input type="checkbox" name="featured" value="true" />
+              Feature in hero slideshow
+            </label>
+          </div>
+          <button type="submit" class="btn-upload" id="uploadBtn">Upload</button>
+          <p class="upload-msg" id="uploadMsg"></p>
+        </form>
+      </div>
+
+      <!-- TAB: WRITE-UPS -->
+      <div id="tab-writeups" class="tab-panel">
+        <h2>New Write-up</h2>
+        <form id="writeupForm" enctype="multipart/form-data">
+          <div class="fields">
+            <input type="text" name="title" placeholder="Title *" required />
+            <select name="category">
+              <option value="blog">Blog Post</option>
+              <option value="product">Product Story</option>
+              <option value="behindscenes">Behind the Scenes</option>
+              <option value="review">Review</option>
+            </select>
+            <label class="field-label">Cover Image (optional)</label>
+            <input type="file" name="cover" accept="image/*" />
+            <textarea name="content" rows="12" placeholder="Write your story here..." required></textarea>
+          </div>
+          <button type="submit" class="btn-upload">Publish Write-up</button>
+          <p class="upload-msg" id="writeupMsg"></p>
+        </form>
+      </div>
+
+      <!-- TAB: MANAGE -->
+      <div id="tab-manage" class="tab-panel">
+        <h2>Portfolio Items</h2>
+        <div class="manage-filters">
+          <button class="mf active" data-f="all">All</button>
+          <button class="mf" data-f="photo">Photos</button>
+          <button class="mf" data-f="video">Videos</button>
+          <button class="mf" data-f="writeup">Write-ups</button>
+        </div>
+        <div id="manageGrid" class="manage-grid"></div>
+        <p id="emptyMsg" class="empty-msg hidden">No items yet. Upload some content!</p>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../src/admin.js"></script>
+</body>
+</html>
