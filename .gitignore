@@ -4,3 +4,14 @@ node_modules/
 DS_Store
 .DS_Store
 Thumbs.db
+
+# Claude Code tooling
+.claude/
+.claude-flow/
+.swarm/
+.mcp.json
+CLAUDE.md
+ruvector.db
+
+# Legacy scripts
+edit_products.py
